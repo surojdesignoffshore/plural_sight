@@ -1,0 +1,335 @@
+<!doctype html >
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Songs</title>
+	
+	<link rel="stylesheet" href="Content/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="Content/site.css" />
+	<link rel="stylesheet" type="text/css" href="Content/pdsa-sidebar.css" />
+	<link rel="stylesheet" type="text/css" href="Content/pdsa-summary-block.css" />
+	<link rel="stylesheet" type="text/css" href="Content/pdsa-readme-box.css" />
+
+	<style type="text/css">
+		.title
+		{
+			display: block;
+			font-weight: bold;
+			font-size: 1.5em;
+		}
+		.desc
+		{
+			display: block;
+			font-size: 1.25em;
+		}
+		.price
+		{
+			font-size: 1.25em;
+		}
+		.panel-body
+		{
+			min-height: 7em;
+		}
+		.btn-group .btn span,
+		.btn-group .btn input[type='checkbox']
+		{
+			padding-top: 0.5em;
+			padding-bottom: 0em;
+		}
+	</style>
+	
+</head>
+
+<body class="no-transition">
+	
+	<div class="container">
+		<div class="row">
+			<header>
+				<a href="index.html">My Tunes</a>
+			</header>
+		</div>
+		<nav id="sideNavParent" class="pdsa-sn-wrapper">
+			<ul>
+				<li class="pdsa-sn-brand">
+					<a href="index.html" class="visible-sm visible-md visible-lg">Music</a>
+				</li>
+				<li>
+					<a href="index.html">
+						<span class="visible-sm visible-md visible-lg">Home</span>
+						<i class="glyphicon glyphicon-home visible-xs"></i>
+					</a>
+				</li>
+				<li>
+					<a href="#" data-toggle="collapse" data-target="#ulGenres">
+						<span class="visible-sm visible-md visible-lg">Genres&nbsp;<b class="caret"></b></span>
+						<i class="glyphicon glyphicon-globe visible-xs"></i>
+					</a>
+					<div class="visible-sm visible-md visible-lg">
+						<ul id="ulGenres" class="collapse" data-parent="#sideNavParent">
+							<li>
+								<a href="Genres.html">All Genres</a>
+							</li>
+							<li>
+								<a href="#">Jazz</a>
+							</li>
+							<li>
+								<a href="#">Country</a>
+							</li>
+							<li>
+								<a href="#">Rock</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="#" data-toggle="collapse" data-target="#ulPlaylists">
+						<span class="visible-sm visible-md visible-lg">Playlists&nbsp;<b class="caret"></b></span>
+						<i class="glyphicon glyphicon-list-alt visible-xs"></i>
+					</a>
+					<div class="visible-sm visible-md visible-lg">
+						<ul id="ulPlaylists" class="collapse" data-parent="#sideNavParent">
+							<li>
+								<a href="#">All Playlists</a>
+							</li>
+							<li>
+								<a href="#">My Top Rated</a>
+							</li>
+							<li>
+								<a href="#">Top Country</a>
+							</li>
+							<li>
+								<a href="#">Top Classic Rock</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="#">
+						<span class="visible-sm visible-md visible-lg">Songs</span>
+						<i class="glyphicon glyphicon-music visible-xs"></i>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="visible-sm visible-md visible-lg">Downloads</span>
+						<i class="glyphicon glyphicon-download visible-xs"></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+	<div class="container body-content">
+		<div class="row">
+			<div class="text-center col-xs-12">
+				<h3>Display the following songs...</h3>
+				<div class="well well-sm">
+					<div class="btn-group" data-toggle="buttons" id="songSelect">
+						<label class="btn btn-default">
+							<span class="glyphicon glyphicon-unchecked"></span>
+							<input type="radio" /> All Songs
+						</label>
+					
+						<label class="btn btn-default">
+							<span class="glyphicon glyphicon-unchecked"></span>
+							<input type="radio" /> Selected
+						</label>							
+					
+						<label class="btn btn-default">
+							<span class="glyphicon glyphicon-unchecked"></span>
+							<input type="radio" /> Unselected
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-12 col-sm-4">
+				<div class="panel panel-warning">
+					<div class="panel-body">
+						<span class="title">Southern Style</span>
+						<span class="desc">Darius Rucker</span>
+						<span class="price">$10.00</span>
+					</div>
+					<div class="panel-footer">
+						<div class="btn-group" data-toggle="buttons">
+							<label class="btn btn-success active">
+								<span class="glyphicon glyphicon-ok-circle"></span>
+								<input type="checkbox" id="chk1" name="Products" checked="checked" />
+								<label for="chk1">selected</label>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="Scripts/jquery-3.1.1.min.js"></script>
+	
+	<script src="Scripts/bootstrap.min.js"></script>
+	<script type="text/javascript" src="Scripts/pdsa-common.js"></script>
+	<script type="text/javascript">
+		var checkOptions = {
+			id: "",
+			checkedGlyph: "glyphicon-ok-circle",
+			uncheckedGlyph: "glyphicon-unchecked",
+			checkedBtnClass: "btn-success",
+			uncheckedBtnClass: "btn-primary",
+			checkedText: "Selected",
+			uncheckedText: "Not Selected"
+		};
+
+		/* The comment is only for the functions
+
+		$(document).ready(function(){
+			$("#songSelect .btn").on('click',function(){
+				ToggleRadioButton("#songSelect",$(this));
+			});
+			$("[type='checkbox']").on('change',function(){
+				if($(this).prop('checked')){
+					$(this).prev()
+						.removeClass('glyphicon-unchecked')
+						.addClass('glyphicon-ok-circle');
+					$(this).parent()
+						.removeClass("btn-primary")
+						.addClass("btn-success");
+					$(this).next().text("Selected");
+				}
+				else
+				{
+					$(this).prev()
+						.removeClass('glyphicon-ok-circle')
+						.addClass('glyphicon-unchecked');
+					$(this).parent()
+						.removeClass("btn-success")
+						.addClass("btn-primary");
+					$(this).next().text("Not Selected");
+				}
+			});
+			$("input:checked").prev()
+				.removeClass('glyphicon-unchecked')
+				.addClass('glyphicon-ok-circle');
+			$("input:checked").parent()
+				.addClass('active')
+		});
+		function ToggleRadioButton(groupName,current)
+		{
+			$(groupName + " .glyphicon-record")
+			.removeClass("glyphicon-record")
+			.addClass("glyphicon-unchecked");
+
+			current.find(":first-child")
+			.removeClass("glyphicon-unchecked")
+			.addClass("glyphicon-record");
+		}*/
+
+// both the above commented and the below used script works fine
+// only the use of click function is different
+		
+		/*
+
+		$(document).ready(function(){
+			$("#songSelect .btn").click(function(){
+				ToggleRadioButton("#songSelect",$(this));
+			});
+			$("[type='checkbox']").change(function(){
+				if($(this).prop('checked')){
+					$(this).prev()
+						.removeClass('glyphicon-unchecked')
+						.addClass('glyphicon-ok-circle');
+					$(this).parent()
+						.removeClass("btn-primary")
+						.addClass("btn-success");
+					$(this).next().text("Selected");
+				}
+				else
+				{
+					$(this).prev()
+						.removeClass('glyphicon-ok-circle')
+						.addClass('glyphicon-unchecked');
+					$(this).parent()
+						.removeClass("btn-success")
+						.addClass("btn-primary");
+					$(this).next().text("Not Selected");
+				}
+			});
+			$("input:checked").prev()
+				.removeClass('glyphicon-unchecked')
+				.addClass('glyphicon-ok-circle');
+			$("input:checked").parent()
+				.addClass('active')
+		});
+		function ToggleRadioButton(groupName,current)
+		{
+			$(groupName + " .glyphicon-record")
+			.removeClass("glyphicon-record")
+			.addClass("glyphicon-unchecked");
+
+			current.find(":first-child")
+			.removeClass("glyphicon-unchecked")
+			.addClass("glyphicon-record");
+		}
+		*/
+
+		/* Using the variable that are defined above*/
+		$(document).ready(function(){
+			$("#songSelect .btn").click(function(){
+				ToggleRadioButton("#songSelect",$(this));
+			});
+			$("[type='checkbox']").change(function(){
+				if($(this).prop('checked')){
+					setChecked($(this));
+				}
+				else
+				{
+					setUnChecked($(this));
+				}
+			});
+
+			var checked = $(checkOptions.id + " .btn-group input:checked");
+			setChecked(checked);
+			
+
+			$("input:checked").prev()
+				.removeClass('glyphicon-unchecked')
+				.addClass('glyphicon-ok-circle');
+			$("input:checked").parent()
+				.addClass('active')
+		});
+		function setChecked(ctl)
+		{
+			$(ctl).prev()
+				.removeClass(checkOptions.uncheckedGlyph)
+				.addClass(checkOptions.checkedGlyph);
+			$(ctl).parent()
+				.removeClass(checkOptions.uncheckedBtnClass)
+				.addClass(checkOptions.checkedBtnClass);
+			$(ctl).next().text(checkOptions.checkedText);
+		}
+		function setUnChecked(ctl)
+		{
+			$(ctl).prev()
+				.removeClass(checkOptions.checkedGlyph)
+				.addClass(checkOptions.uncheckedGlyph);
+			$(ctl).parent()
+				.removeClass(checkOptions.checkedBtnClass)
+				.addClass(checkOptions.uncheckedBtnClass);
+			$(ctl).next().text(checkOptions.uncheckedText);
+		}
+		function ToggleRadioButton(groupName,current)
+		{
+			$(groupName + " .glyphicon-record")
+			.removeClass("glyphicon-record")
+			.addClass("glyphicon-unchecked");
+
+			current.find(":first-child")
+			.removeClass("glyphicon-unchecked")
+			.addClass("glyphicon-record");
+		}
+		
+	</script>
+</body>
+</html>

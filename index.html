@@ -1,0 +1,199 @@
+<!doctype html >
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Music Site</title>
+	
+	<link rel="stylesheet" href="Content/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="Content/site.css" />
+	<link rel="stylesheet" type="text/css" href="Content/pdsa-sidebar.css" />
+	<link rel="stylesheet" type="text/css" href="Content/pdsa-summary-block.css" />
+	<link rel="stylesheet" type="text/css" href="Content/pdsa-readme-box.css" />
+	
+</head>
+
+<body class="no-transition">
+	
+	<div class="container">
+		<div class="row">
+			<header>
+				<a href="index.html">My Tunes</a>
+			</header>
+		</div>
+		<nav id="sideNavParent" class="pdsa-sn-wrapper">
+			<ul>
+				<li class="pdsa-sn-brand">
+					<a href="index.html" class="visible-sm visible-md visible-lg">Music</a>
+				</li>
+				<li>
+					<a href="index.html">
+						<span class="visible-sm visible-md visible-lg">Home</span>
+						<i class="glyphicon glyphicon-home visible-xs"></i>
+					</a>
+				</li>
+				<li>
+					<a href="#" data-toggle="collapse" data-target="#ulGenres">
+						<span class="visible-sm visible-md visible-lg">Genres&nbsp;<b class="caret"></b></span>
+						<i class="glyphicon glyphicon-globe visible-xs"></i>
+					</a>
+					<div class="visible-sm visible-md visible-lg">
+						<ul id="ulGenres" class="collapse" data-parent="#sideNavParent">
+							<li>
+								<a href="Genres.html">All Genres</a>
+							</li>
+							<li>
+								<a href="#">Jazz</a>
+							</li>
+							<li>
+								<a href="#">Country</a>
+							</li>
+							<li>
+								<a href="#">Rock</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="#" data-toggle="collapse" data-target="#ulPlaylists">
+						<span class="visible-sm visible-md visible-lg">Playlists&nbsp;<b class="caret"></b></span>
+						<i class="glyphicon glyphicon-list-alt visible-xs"></i>
+					</a>
+					<div class="visible-sm visible-md visible-lg">
+						<ul id="ulPlaylists" class="collapse" data-parent="#sideNavParent">
+							<li>
+								<a href="#">All Playlists</a>
+							</li>
+							<li>
+								<a href="#">My Top Rated</a>
+							</li>
+							<li>
+								<a href="#">Top Country</a>
+							</li>
+							<li>
+								<a href="#">Top Classic Rock</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="songs.html">
+						<span class="visible-sm visible-md visible-lg">Songs</span>
+						<i class="glyphicon glyphicon-music visible-xs"></i>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="visible-sm visible-md visible-lg">Downloads</span>
+						<i class="glyphicon glyphicon-download visible-xs"></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+	<div class="container body-content">
+		<div class="row">
+			<div class="col-xs-12 col-sm-4">
+				<div class="pdsa-summary-block pdsa-summary-block-primary">
+					<div class="summary-background">
+						<i class="glyphicon glyphicon-globe"></i>
+					</div>
+					<div class="summary-body">
+						<div class="summary-line1">
+							14
+						</div>
+						<div class="summary-line2">
+							Genres
+						</div>
+					</div>
+					<div class="summary-footer">
+						<a href="Genres.html">View Genres</a>
+						<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-4">
+				<div class="pdsa-summary-block pdsa-summary-block-success">
+					<div class="summary-background">
+						<i class="glyphicon glyphicon-list-alt"></i>
+					</div>
+					<div class="summary-body">
+						<div class="summary-line1">
+							5
+						</div>
+						<div class="summary-line2">
+							Playlists
+						</div>
+					</div>
+					<div class="summary-footer">
+						<a href="#">See Playlists</a>
+						<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-4">
+				<div class="pdsa-summary-block pdsa-summary-block-info">
+					<div class="summary-background">
+						<i class="glyphicon glyphicon-music"></i>
+					</div>
+					<div class="summary-body">
+						<div class="summary-line1">
+							214
+						</div>
+						<div class="summary-line2">
+							Songs
+						</div>
+					</div>
+					<div class="summary-footer">
+						<a href="#">ALl Songs</a>
+						<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-4">
+				<div class="pdsa-summary-block pdsa-summary-block-danger">
+					<div class="summary-background">
+						<i class="glyphicon glyphicon-download"></i>
+					</div>
+					<div class="summary-body">
+						<div class="summary-line1">
+							1
+						</div>
+						<div class="summary-line2">
+							Download
+						</div>
+					</div>
+					<div class="summary-footer">
+						<a href="#">Get Downloads</a>
+						<i class="glyphicon glyphicon-chevron-right pull-right"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-8">
+				<div class="pdsa-readme-box pdsa-readme-box-primary">
+					<div class="readme-header">
+						<i class="glyphicon glyphicon-music"></i>
+					</div>
+					<div class="readme-body">
+						<h1>Free Music</h1>
+						<p>Each day we have a free song selected especially for you!</p>
+					</div>
+					<div class="readme-footer">
+						<a href="#">+ See My Songs...</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="Scripts/jquery-3.1.1.min.js"></script>
+	
+	<script src="Scripts/bootstrap.min.js"></script>
+	<script type="text/javascript" src="Scripts/pdsa-common.js"></script>
+</body>
+</html>
