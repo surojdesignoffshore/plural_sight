@@ -248,8 +248,8 @@
 						<div class="btn-group" data-toggle="buttons">
 							<label class="btn btn-primary">
 								<span class="glyphicon glyphicon-unchecked"></span>
-								<input type="checkbox" id="chk1" name="Products" />
-								<label for="chk1">Not Selected</label>
+								<input type="checkbox" id="chk3" name="Products" />
+								<label for="chk3">Not Selected</label>
 							</label>
 						</div>
 					</div>
@@ -266,8 +266,8 @@
 						<div class="btn-group" data-toggle="buttons">
 							<label class="btn btn-primary">
 								<span class="glyphicon glyphicon-unchecked"></span>
-								<input type="checkbox" id="chk1" name="Products" />
-								<label for="chk1">Not Selected</label>
+								<input type="checkbox" id="chk3" name="Products" />
+								<label for="chk3">Not Selected</label>
 							</label>
 						</div>
 					</div>
@@ -397,10 +397,18 @@
 				{
 					setUnChecked($(this));
 				}
+
+				calculateTotal($(this));
 			});
 
 			var checked = $(checkOptions.id + " .btn-group input:checked");
-			setChecked(checked);
+			
+
+			for(var i = 0;i<checked.length;i++)
+			{
+				setChecked($(checked[i]));
+				calculateTotal($(checked[i]));
+			}
 			
 
 			$("input:checked").prev()
@@ -438,6 +446,25 @@
 			current.find(":first-child")
 			.removeClass("glyphicon-unchecked")
 			.addClass("glyphicon-record");
+		}
+		function calculateTotal(ctl)
+		{
+			var total = $("#total").text();
+			total = stripCurrency(total);
+			var price = $(ctl).closest(".panel").find(".price").text();
+			price = stripCurrency(price);
+			if($(ctl).prop("checked"))
+			{
+				// Add to total
+				total = parseFloat(total) + parseFloat(price);
+			}
+			else
+			{
+				//subtract from total
+				//Add to total
+				total = parseFloat(total) - parseFloat(price);
+			}
+			$("#total").text(formatCurrency(total));
 		}
 		
 	</script>
