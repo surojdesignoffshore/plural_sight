@@ -282,15 +282,7 @@
 	<script type="text/javascript" src="Scripts/pdsa-numberformat.js"></script>
 	<script type="text/javascript" src="Scripts/pdsa-common.js"></script>
 	<script type="text/javascript">
-		var checkOptions = {
-			id: "",
-			checkedGlyph: "glyphicon-ok-circle",
-			uncheckedGlyph: "glyphicon-unchecked",
-			checkedBtnClass: "btn-success",
-			uncheckedBtnClass: "btn-primary",
-			checkedText: "Selected",
-			uncheckedText: "Not Selected"
-		};
+		
 
 		/* The comment is only for the functions
 
@@ -389,54 +381,13 @@
 			$("#songSelect .btn").click(function(){
 				ToggleRadioButton("#songSelect",$(this));
 			});
-			$("[type='checkbox']").change(function(){
-				if($(this).prop('checked')){
-					setChecked($(this));
-				}
-				else
-				{
-					setUnChecked($(this));
-				}
-
-				calculateTotal($(this));
-			});
-
-			var checked = $(checkOptions.id + " .btn-group input:checked");
-			
-
-			for(var i = 0;i<checked.length;i++)
-			{
-				setChecked($(checked[i]));
-				calculateTotal($(checked[i]));
-			}
-			
-
 			$("input:checked").prev()
 				.removeClass('glyphicon-unchecked')
 				.addClass('glyphicon-ok-circle');
 			$("input:checked").parent()
 				.addClass('active')
-		});
-		function setChecked(ctl)
-		{
-			$(ctl).prev()
-				.removeClass(checkOptions.uncheckedGlyph)
-				.addClass(checkOptions.checkedGlyph);
-			$(ctl).parent()
-				.removeClass(checkOptions.uncheckedBtnClass)
-				.addClass(checkOptions.checkedBtnClass);
-			$(ctl).next().text(checkOptions.checkedText);
-		}
-		function setUnChecked(ctl)
-		{
-			$(ctl).prev()
-				.removeClass(checkOptions.checkedGlyph)
-				.addClass(checkOptions.uncheckedGlyph);
-			$(ctl).parent()
-				.removeClass(checkOptions.checkedBtnClass)
-				.addClass(checkOptions.uncheckedBtnClass);
-			$(ctl).next().text(checkOptions.uncheckedText);
-		}
+		});	
+	
 		function ToggleRadioButton(groupName,current)
 		{
 			$(groupName + " .glyphicon-record")
@@ -447,25 +398,7 @@
 			.removeClass("glyphicon-unchecked")
 			.addClass("glyphicon-record");
 		}
-		function calculateTotal(ctl)
-		{
-			var total = $("#total").text();
-			total = stripCurrency(total);
-			var price = $(ctl).closest(".panel").find(".price").text();
-			price = stripCurrency(price);
-			if($(ctl).prop("checked"))
-			{
-				// Add to total
-				total = parseFloat(total) + parseFloat(price);
-			}
-			else
-			{
-				//subtract from total
-				//Add to total
-				total = parseFloat(total) - parseFloat(price);
-			}
-			$("#total").text(formatCurrency(total));
-		}
+		
 		
 	</script>
 </body>
