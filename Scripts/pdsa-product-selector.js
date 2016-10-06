@@ -62,9 +62,9 @@ function setUnChecked(ctl)
 
 function calculateTotal(ctl)
 {
-	var total = $("#total").text();
+	var total = $(totalOptions.id).text();
 	total = stripCurrency(total);
-	var price = $(ctl).closest(".panel").find(".price").text();
+	var price = $(ctl).closest(totalOptions.priceContainerClass).find(totalOptions.priceClass).text();
 	price = stripCurrency(price);
 	if($(ctl).prop("checked"))
 	{
@@ -77,5 +77,5 @@ function calculateTotal(ctl)
 		//Add to total
 		total = parseFloat(total) - parseFloat(price);
 	}
-	$("#total").text(formatCurrency(total));
+	$(totalOptions.id).text(formatCurrency(total));
 }
