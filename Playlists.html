@@ -176,10 +176,35 @@
 	<script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
 	<script type="text/javascript" src="Scripts/pdsa-common.js"></script>
 	<script type="text/javascript">
-		$(document).ready(function(){
+		$(document).ready(function()
+		{
 			$("#playlists .pdsa-panel-toggle")
 			.addClass(" glyphicon glyphicon-plus");
 
+			var list = $("#playlists .in");
+			for (var i = 0; i < list.length; i++)
+			{
+				$("a[href='#" + $(list[i]).attr("id") + "']")
+				.next(".pdsa-panel-toggle")
+				.removeClass("glyphicon-plus")
+				.addClass("glyphicon-minus");
+			}
+
+			$("#playlists").on('hide.bs.collapse',function(e)
+			{
+				$("#" + e.target.id).prev()
+				.find(".pdsa-panel-toggle")
+				.removeClass("glyphicon-minus")
+				.addClass("glyphicon-plus");
+			});
+
+			$("#playlists").on('show.bs.collapse',function(e)
+			{
+				$("#" + e.target.id).prev()
+				.find(".pdsa-panel-toggle")
+				.removeClass("glyphicon-plus")
+				.addClass("glyphicon-minus");
+			});
 		});
 	</script>>
 
