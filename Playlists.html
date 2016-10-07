@@ -118,7 +118,7 @@
 						<div class="panel-heading">
 							<h1 class="panel-title">
 								<a href="#mytoprated" data-toggle="collapse" data-parent="#playlists">My Top Rated</a>
-								<a href="#mytoprated" data-toggle="collapse" data-parent="#playlists" class="pdsa-panel-toggle glyphicon glyphicon-minus"></a>
+								<a href="#mytoprated" data-toggle="collapse" data-parent="#playlists" class="pdsa-panel-toggle"></a>
 							</h1>
 						</div>
 						<div id="mytoprated" class="panel-collapse collapse in">
@@ -132,7 +132,7 @@
 						<div class="panel-heading">
 							<h1 class="panel-title">
 								<a href="#topcountry" data-toggle="collapse" data-parent="#playlists">Top Country</a>
-								<a href="#topcountry" data-toggle="collapse" data-parent="#playlists" class="pdsa-panel-toggle glyphicon glyphicon-minus"></a>
+								<a href="#topcountry" data-toggle="collapse" data-parent="#playlists" class="pdsa-panel-toggle"></a>
 							</h1>
 						</div>
 						<div id="topcountry" class="panel-collapse collapse">
@@ -146,7 +146,7 @@
 						<div class="panel-heading">
 							<h1 class="panel-title">
 								<a href="#toprock" data-toggle="collapse" data-parent="#playlists">Top Rock</a>
-								<a href="#toprock" data-toggle="collapse" data-parent="#playlists" class="pdsa-panel-toggle glyphicon glyphicon-minus"></a>
+								<a href="#toprock" data-toggle="collapse" data-parent="#playlists" class="pdsa-panel-toggle"></a>
 							</h1>
 						</div>
 						<div id="toprock" class="panel-collapse collapse">
@@ -175,6 +175,13 @@
 	<script type="text/javascript" src="Scripts/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
 	<script type="text/javascript" src="Scripts/pdsa-common.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#playlists .pdsa-panel-toggle")
+			.addClass(" glyphicon glyphicon-plus");
+
+		});
+	</script>>
 
 	<!-- End: Scripts-->
 </body>
